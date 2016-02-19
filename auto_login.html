@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/fw.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      	var args = new Object();
+		args = Common.GetUrlParms();
+		var access_token = args["access_token"]
+		if(access_token != undefined){
+			Common.SaveAccessToken(access_token);
+			window.location.href = "main.html";
+		}
+    </script>
+</head>
+<body>
+	
+</body>
+</html>
