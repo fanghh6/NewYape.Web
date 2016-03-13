@@ -39,21 +39,24 @@
 		.oa-contact-name, oa-contact-position {
 			float: left;
 		}
+		.mui-control-content {
+			height: 150px;
+		}
 	</style>
 </head>
 	<body>
-		<!--<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">底部选项卡-div模式</h1>
-		</header>-->
+		<header class="mui-bar mui-bar-nav">
+			<!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+			<h1 class="mui-title">Yape</h1>
+		</header>
 		<nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item mui-active" href="#tabbar">
+			<a class="mui-tab-item mui-active" href="#tabbar-user-info">
 				<span class="mui-icon mui-icon-home"></span>
-				<span class="mui-tab-label">首页</span>
+				<span class="mui-tab-label">个人信息</span>
 			</a>
-			<a class="mui-tab-item" href="#tabbar-with-chat">
-				<span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
-				<span class="mui-tab-label">消息</span>
+			<a id="tab-tabbar-boy-invite" class="mui-tab-item" href="#tabbar-boy-invite">
+				<span class="mui-icon mui-icon-email"><!--<span class="mui-badge"></span>--></span>
+				<span class="mui-tab-label">查看邀约</span>
 			</a>
 			<a class="mui-tab-item" href="#tabbar-with-contact">
 				<span class="mui-icon mui-icon-contact"></span>
@@ -65,7 +68,7 @@
 			</a>
 		</nav>
 		<div class="mui-content">
-			<div id="tabbar" class="mui-control-content mui-active">
+			<div id="tabbar-user-info" class="mui-control-content mui-active">
 				<div class="title">这是div模式选项卡中的第1个子页面.</div>
 				<div class="title">何谓div模式的选项卡？
 					其实就是通过DIV模拟一个独立页面，通过DIV的显示、隐藏模拟不同页面的切换，典型的SPA模式；</div>
@@ -74,35 +77,119 @@
 					若逻辑复杂，会导致当前页面DOM结构繁杂，造成webview响应缓慢，甚至崩溃；
 					因此若系统较复杂，需要下拉刷新等操作，推荐使用webview模式的选项卡；</div>
 			</div>
-			<div id="tabbar-with-chat" class="mui-control-content">
-				<div class="title">这是div模式选项卡中的第2个子页面，该页面展示一个消息列表</div>
-				
-				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 1</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 2</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 3</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 4</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 5</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 6</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 7</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 8</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 9</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 10</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 11</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 12</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 13</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 14</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 15</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 16</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 17</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 18</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 19</a></li>
-					<li class="mui-table-view-cell"><a href="" class="mui-navigate-right">Item 20</a></li>
-				</ul>
-				
+			<div id="tabbar-boy-invite" class="mui-control-content">
+				<div style="padding: 1px 1px;">
+					<div class="mui-segmented-control">
+						<a id="tab-boy-invite-new" class="mui-control-item mui-active" href="#boy-invite-new">
+							最新邀约
+						</a>
+						<a class="mui-control-item" href="#boy-invite-enrolled">
+							已报名
+						</a>
+						<a id="tab-boy-invite-accepted" class="mui-control-item" href="#boy-invite-accepted">
+							已邀约
+						</a>
+					</div>
+				</div>
+				<div id="boy-invite-new" class="mui-control-content mui-scroll-wrapper mui-active">
+					<div id="boy-invite-new-div" class="mui-scroll">
+						<ul class="mui-table-view">
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-1
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-2
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-3
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-4
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-5
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-6
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-7
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-8
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-9
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-10
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-11
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-12
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right" href="subpages/boy_invite_detail.html">
+									ajax（网络请求）
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-13
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-14
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-15
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-16
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-17
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-18
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-19
+							</li>
+							<li class="mui-table-view-cell">
+								第一个选项卡子项-20
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="boy-invite-enrolled" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							第二个选项卡子项-1
+						</li>
+						<li class="mui-table-view-cell">
+							第二个选项卡子项-2
+						</li>
+						<li class="mui-table-view-cell">
+							第二个选项卡子项-3
+						</li>
+					</ul>
+				</div>
+				<div id="boy-invite-accepted" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							第三个选项卡子项-1
+						</li>
+						<li class="mui-table-view-cell">
+							第三个选项卡子项-2
+						</li>
+						<li class="mui-table-view-cell">
+							第三个选项卡子项-3
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div id="tabbar-with-contact" class="mui-control-content">
-				<div class="title">这是div模式选项卡中的第3个子页面，该页面展示一个通讯录示例.</div>
 				<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
 				<li class="mui-table-view-cell">
 					<div class="mui-slider-cell">
@@ -236,9 +323,41 @@
     <script src="js/mui.min.js"></script>
 	<script>
 		mui.init({
-			//swipeBack:true //启用右滑关闭功能
+			swipeBack:false //右滑关闭功能
 		});
-      	var access_token = Common.GetAccessToken();
-      	//alert(access_token)
+		(function($) {
+			$('#boy-invite-new').scroll({
+				indicators: false //是否显示滚动条
+			});
+		})(mui);
+		
+		//解决微信浏览器返回重新刷新页面的问题
+		//重置所有active
+//		var curActive = document.querySelectorAll(".mui-active");
+//		for( var i = 0 , j = curActive.length ; i < j ; i++ ){
+//  			curActive[i].classList.remove('mui-active');
+//		};
+//
+//		var activeList = new Object();
+//		document.getElementById("tab-tabbar-boy-invite").classList.add('mui-active');
+//		document.getElementById("tab-boy-invite-new").classList.add('mui-active');
+//		document.getElementById("tabbar-boy-invite").classList.add('mui-active');
+//		document.getElementById("boy-invite-new").classList.add('mui-active');
+////		document.getElementById("boy-invite-new").scroll().scrollTo(500,0);
+////		mui('#refreshContainer').scroll().scrollTo(0,0);
+//		mui('#boy-invite-new').scroll().scrollTo(0,-403 - 97);
+//	    //alert(document.getElementById("boy-invite-new").scrollHeight)
+//		for( var i = 0 , j = activeList.length ; i < j ; i++ ){
+//  			activeList[i].classList.add('mui-active');
+//		};
+	    
+//	    //切换选项卡高亮
+//	    var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
+//	    if (targetTab !== current) {
+//	        current.classList.remove('mui-active');
+//	        targetTab.classList.add('mui-active');
+//	    }
+		
+
 	</script>
 </html>
